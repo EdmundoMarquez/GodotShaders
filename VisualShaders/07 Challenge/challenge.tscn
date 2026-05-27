@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh28neakatct6"]
+
+[ext_resource type="Shader" uid="uid://dgbvx1ojk26im" path="res://07 Challenge/dissolve.tres" id="1_8t1pw"]
+[ext_resource type="Texture2D" uid="uid://dpve06usbp6ro" path="res://icon.svg" id="1_uaxx4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0e5g"]
+shader = ExtResource("1_8t1pw")
+
+[node name="challenge" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_i0e5g")
+texture = ExtResource("1_uaxx4")

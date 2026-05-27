@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2awv1ublku5j"]
+
+[ext_resource type="PackedScene" uid="uid://c3w3nuxvsafuc" path="res://01 Shader Setup/shader_setup.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cywqwlyk8gcbf" path="res://02 Shader Data Types/shader_data_types.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://6pjg34lcoqmc" path="res://03 UV/uv.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://be2mnsi2m6f8e" path="res://04 Texture/texture.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://ceeb6tiyb6gsm" path="res://05 Shader Parameters/shader_params.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://b8qqv33rir6yv" path="res://06 Vertex Shader/vertex.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bh28neakatct6" path="res://07 Challenge/challenge.tscn" id="7_272bh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="01 Shader Setup" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(192, 128)
+
+[node name="02 Shader Data Tyoes" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(576, 128)
+
+[node name="03 UV" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(960, 128)
+
+[node name="04 Texture" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(192, 512)
+
+[node name="05 Shader Parameters" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(576, 512)
+
+[node name="06 Vertex Shader" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(960, 512)
+
+[node name="07 Dissolve" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(192, 128)

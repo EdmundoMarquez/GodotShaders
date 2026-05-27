@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8qqv33rir6yv"]
+
+[ext_resource type="Texture2D" uid="uid://dpve06usbp6ro" path="res://icon.svg" id="1_cdbnp"]
+[ext_resource type="Shader" uid="uid://fpbbm88joskq" path="res://06 Vertex Shader/vertex.tres" id="1_cjf2e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p133l"]
+shader = ExtResource("1_cjf2e")
+shader_parameter/Speed = 8.00000038
+shader_parameter/Radius = 40.0000019
+
+[node name="vertex" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_p133l")
+texture = ExtResource("1_cdbnp")

@@ -1,0 +1,29 @@
+[gd_resource type="VisualShader" load_steps=2 format=3 uid="uid://cu6ep0cpoevp2"]
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_53s50"]
+output_port_for_preview = 0
+constant = 0.3
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+
+
+
+void fragment() {
+// FloatConstant:2
+	float n_out2p0 = 0.300000;
+
+
+// Output:0
+	COLOR.a = n_out2p0;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/2/node = SubResource("VisualShaderNodeFloatConstant_53s50")
+nodes/fragment/2/position = Vector2(0, 220)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 1)

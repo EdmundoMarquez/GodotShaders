@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceeb6tiyb6gsm"]
+
+[ext_resource type="Texture2D" uid="uid://dpve06usbp6ro" path="res://icon.svg" id="1_sir83"]
+[ext_resource type="Shader" uid="uid://dr76ddp1najc5" path="res://05 Shader Parameters/shader_parameters.tres" id="1_uew3l"]
+[ext_resource type="Script" uid="uid://7exlv3ma6hnx" path="res://05 Shader Parameters/shaderParamsCustomizer.gd" id="3_88y83"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_88y83"]
+shader = ExtResource("1_uew3l")
+shader_parameter/MainColor = Color(0.086275, 0.243137, 1, 1)
+shader_parameter/HighlightColor = Color(0, 0.971707, 0.971707, 1)
+shader_parameter/PulseIntensity = 0.5
+
+[node name="shader_params" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_88y83")
+texture = ExtResource("1_sir83")
+script = ExtResource("3_88y83")
+main_color_to = Color(0.4366333, 0.015018046, 0.56066877, 1)
+highlight_color_to = Color(0.32931468, 0.6522601, 0.7021828, 1)
+pulse_amount_to = 0.8
