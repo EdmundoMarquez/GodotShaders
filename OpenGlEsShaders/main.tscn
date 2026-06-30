@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bdo7cgw512aaw"]
+
+[ext_resource type="PackedScene" uid="uid://vhkg8re8l2t6" path="res://01 Basic Shader/basic_shader.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bketlv1guorha" path="res://02 UV Textures/uv_textures.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d3uyv03qyo8tp" path="res://03 Conditionals/conditionals.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://k7cj1r8xunht" path="res://04 Screen Wipe/screen_wipe.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cq48e375tuk2" path="res://05 Vertex Shader/vertex_shader.tscn" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://dhcm3012iv7yl" path="res://Interface.cs" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bhmr5h8bc52oa" path="res://06 Custom Ring/custom_ring.tscn" id="6_272bh"]
+
+[node name="Main" type="Node2D" unique_id=501119686]
+
+[node name="01 Basic Shader" parent="." unique_id=304283693 instance=ExtResource("1_0xm2m")]
+position = Vector2(192, 128)
+
+[node name="02 UvTextures" parent="." unique_id=1644872549 instance=ExtResource("2_h2yge")]
+position = Vector2(576, 128)
+
+[node name="03 Conditionals" parent="." unique_id=12727682 instance=ExtResource("3_h2yge")]
+position = Vector2(960, 127)
+
+[node name="04 ScreenWipe" parent="." unique_id=2133999535 instance=ExtResource("4_1bvp3")]
+
+[node name="05 VertexShader" parent="." unique_id=2136346832 instance=ExtResource("5_7mycd")]
+position = Vector2(192, 384)
+
+[node name="06 CustomRing" parent="." unique_id=1578777470 instance=ExtResource("6_272bh")]
+position = Vector2(960, 384)
+
+[node name="Interface" type="Node" parent="." unique_id=1906102860 node_paths=PackedStringArray("screenWipe")]
+script = ExtResource("5_lquwl")
+screenWipe = NodePath("../04 ScreenWipe")
+
+[node name="Panel" type="Control" parent="Interface" unique_id=826092716]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ScreenWipeButton" type="Button" parent="Interface/Panel" unique_id=1334720870]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 180.0
+offset_right = 128.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PLAY SCREEN WIPE"

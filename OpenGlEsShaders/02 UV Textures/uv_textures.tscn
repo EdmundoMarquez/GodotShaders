@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bketlv1guorha"]
+
+[ext_resource type="Script" uid="uid://vd45qe6yy85g" path="res://02 UV Textures/UvTextures.cs" id="1_086d6"]
+[ext_resource type="Texture2D" uid="uid://ervh675tte0f" path="res://icon.svg" id="1_bro1a"]
+[ext_resource type="Shader" uid="uid://dicovrvawhiv7" path="res://02 UV Textures/uv_textures.gdshader" id="1_wbiwd"]
+
+[sub_resource type="Gradient" id="Gradient_wbiwd"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wbiwd"]
+gradient = SubResource("Gradient_wbiwd")
+fill = 1
+fill_from = Vector2(0.51282054, 0.9188034)
+fill_to = Vector2(0.52991456, 0.08974359)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_086d6"]
+shader = ExtResource("1_wbiwd")
+shader_parameter/offset = 0.0
+shader_parameter/red_value = 1.0
+shader_parameter/green_value = 1.0
+shader_parameter/gradient_texture = SubResource("GradientTexture2D_wbiwd")
+
+[node name="UvTextures" type="Node2D" unique_id=1644872549]
+script = ExtResource("1_086d6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1314002978]
+material = SubResource("ShaderMaterial_086d6")
+texture = ExtResource("1_bro1a")
+
+[node name="Controls" type="VBoxContainer" parent="." unique_id=1567355736]
+offset_left = -80.0
+offset_top = 80.0
+offset_right = 81.0
+offset_bottom = 162.0
+
+[node name="RedSlider" type="HBoxContainer" parent="Controls" unique_id=113295039]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Controls/RedSlider" unique_id=614011918]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+bbcode_enabled = true
+text = "[color=red]RED[/color]"
+scroll_active = false
+
+[node name="HSlider" type="HSlider" parent="Controls/RedSlider" unique_id=845071829]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="GreenSlider" type="HBoxContainer" parent="Controls" unique_id=313841878]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Controls/GreenSlider" unique_id=1891641397]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+bbcode_enabled = true
+text = "[color=green]GREEN[/color]"
+scroll_active = false
+
+[node name="HSlider" type="HSlider" parent="Controls/GreenSlider" unique_id=823786130]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="OffsetSlider" type="HBoxContainer" parent="Controls" unique_id=1998430236]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Controls/OffsetSlider" unique_id=1768229303]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+bbcode_enabled = true
+text = "[color=gray]OFFSET[/color]"
+scroll_active = false
+
+[node name="HSlider" type="HSlider" parent="Controls/OffsetSlider" unique_id=360892496]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+max_value = 1.0
+step = 0.05

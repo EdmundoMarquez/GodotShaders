@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://vhkg8re8l2t6"]
+
+[ext_resource type="Shader" uid="uid://d0dr6xybteikt" path="res://01 Basic Shader/basic_shader.gdshader" id="1_6h5te"]
+[ext_resource type="Texture2D" uid="uid://ervh675tte0f" path="res://icon.svg" id="1_iqk2k"]
+[ext_resource type="Script" uid="uid://4ih8wdvjr6sh" path="res://01 Basic Shader/BasicShader.cs" id="1_six81"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqk2k"]
+shader = ExtResource("1_6h5te")
+shader_parameter/custom_color = Color(0.0026401763, 0.3726493, 0.2211816, 0.5058824)
+
+[node name="BasicShader" type="Node2D" unique_id=304283693]
+script = ExtResource("1_six81")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1594952551]
+material = SubResource("ShaderMaterial_iqk2k")
+texture = ExtResource("1_iqk2k")
+
+[node name="Controls" type="HBoxContainer" parent="." unique_id=1425825384]
+offset_left = -64.0
+offset_top = 69.0
+offset_right = 63.0
+offset_bottom = 109.0
+theme_override_constants/separation = 10
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Controls" unique_id=306060734]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+color = Color(0.14901961, 0.3372549, 0.25882354, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Controls" unique_id=1786528300]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+bbcode_enabled = true
+text = "Set Color"
+scroll_active = false
+vertical_alignment = 1

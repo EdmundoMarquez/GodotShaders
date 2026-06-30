@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://k7cj1r8xunht"]
+
+[ext_resource type="Shader" uid="uid://dflh01utsl051" path="res://04 Screen Wipe/screen_wipe.gdshader" id="1_kr71a"]
+[ext_resource type="Script" uid="uid://2te35g272gv8" path="res://04 Screen Wipe/ScreenWipe.cs" id="1_xdht3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mf7qu"]
+shader = ExtResource("1_kr71a")
+shader_parameter/progress = 0.0
+
+[node name="ScreenWipe" type="Node" unique_id=2133999535]
+script = ExtResource("1_xdht3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1581801382]
+material = SubResource("ShaderMaterial_mf7qu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.03, 0.0243, 0.0243, 1)

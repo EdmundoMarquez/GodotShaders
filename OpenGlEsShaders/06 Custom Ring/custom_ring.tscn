@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bhmr5h8bc52oa"]
+
+[ext_resource type="Script" uid="uid://b3rawtcwace34" path="res://06 Custom Ring/CustomRing.cs" id="1_4jfyo"]
+[ext_resource type="Texture2D" uid="uid://ervh675tte0f" path="res://icon.svg" id="1_20ekh"]
+[ext_resource type="Shader" uid="uid://d4hexj5kanc6v" path="res://06 Custom Ring/custom_ring.gdshader" id="1_y1mfc"]
+
+[sub_resource type="Gradient" id="Gradient_4jfyo"]
+offsets = PackedFloat32Array(0, 0.12903225, 0.2853598, 0.4292804, 0.56079406, 0.7146402, 0.8585608, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.4666667, 0, 1, 0.9856667, 1, 0.13999999, 1, 0.26581508, 0.99, 0.22770002, 1, 0.21780004, 0.99, 0.9256499, 1, 0, 0.11700007, 0.78, 1, 0.4264706, 0.06710298, 0.6392646, 1, 1, 0, 0.4499998, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d1u35"]
+gradient = SubResource("Gradient_4jfyo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_20ekh"]
+shader = ExtResource("1_y1mfc")
+shader_parameter/tint_color = Color(0.9309759, 0, 0.24992001, 0.5647059)
+shader_parameter/custom_radius = 0.2
+shader_parameter/custom_width = 0.10000000475
+shader_parameter/custom_feather = 0.00999999977648
+
+[node name="CustomRing" type="Node2D" unique_id=1578777470]
+script = ExtResource("1_4jfyo")
+colorGradient = SubResource("GradientTexture1D_d1u35")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1362188859]
+material = SubResource("ShaderMaterial_20ekh")
+texture = ExtResource("1_20ekh")
+
+[node name="Controls" type="VBoxContainer" parent="." unique_id=38813051]
+offset_left = -103.0
+offset_top = 80.0
+offset_right = 104.0
+offset_bottom = 162.0
+
+[node name="RadiusSlider" type="HBoxContainer" parent="Controls" unique_id=80792266]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Controls/RadiusSlider" unique_id=1386020513]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "RADIUS"
+
+[node name="HSlider" type="HSlider" parent="Controls/RadiusSlider" unique_id=388310872]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+min_value = 0.1
+max_value = 0.3
+step = 0.05
+value = 0.2
+
+[node name="WidthSlider" type="HBoxContainer" parent="Controls" unique_id=1859978242]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Controls/WidthSlider" unique_id=250725180]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "WIDTH"
+
+[node name="HSlider" type="HSlider" parent="Controls/WidthSlider" unique_id=369011036]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+max_value = 0.5
+step = 0.05
+value = 0.1
+
+[node name="FeatherSlider" type="HBoxContainer" parent="Controls" unique_id=1794348607]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Controls/FeatherSlider" unique_id=499531608]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "FEATHER"
+
+[node name="HSlider" type="HSlider" parent="Controls/FeatherSlider" unique_id=411451362]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+min_value = 0.01
+max_value = 0.3
+step = 0.05
+value = 0.01

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cq48e375tuk2"]
+
+[ext_resource type="Texture2D" uid="uid://ervh675tte0f" path="res://icon.svg" id="1_2uiy5"]
+[ext_resource type="Shader" uid="uid://cqvk1pfl6vgnr" path="res://05 Vertex Shader/vertex_shader.gdshader" id="1_bclws"]
+[ext_resource type="Script" uid="uid://djkear5rhx30j" path="res://05 Vertex Shader/VertexShader.cs" id="1_n5we6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bclws"]
+shader = ExtResource("1_bclws")
+shader_parameter/offset_x = 0.0
+shader_parameter/stretch_y = 1.0
+shader_parameter/center_distance = 50.0
+
+[node name="VertexShader" type="Node2D" unique_id=2136346832]
+script = ExtResource("1_n5we6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1035911597]
+material = SubResource("ShaderMaterial_bclws")
+texture = ExtResource("1_2uiy5")
+
+[node name="Controls" type="VBoxContainer" parent="." unique_id=85761145]
+offset_left = -103.0
+offset_top = 80.0
+offset_right = 104.0
+offset_bottom = 162.0
+
+[node name="OffsetSlider" type="HBoxContainer" parent="Controls" unique_id=727274679]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Controls/OffsetSlider" unique_id=798653837]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "OFFSET"
+
+[node name="HSlider" type="HSlider" parent="Controls/OffsetSlider" unique_id=877402223]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+min_value = -200.0
+max_value = 200.0
+step = 5.0
+
+[node name="StretchSlider" type="HBoxContainer" parent="Controls" unique_id=819419851]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Controls/StretchSlider" unique_id=1458734763]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "STRETCH"
+
+[node name="HSlider" type="HSlider" parent="Controls/StretchSlider" unique_id=854407360]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="CenterSlider" type="HBoxContainer" parent="Controls" unique_id=1722444453]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Controls/CenterSlider" unique_id=1590713471]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "CENTER"
+
+[node name="HSlider" type="HSlider" parent="Controls/CenterSlider" unique_id=968248302]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.7
+min_value = 20.0
+step = 0.1
+value = 50.0
